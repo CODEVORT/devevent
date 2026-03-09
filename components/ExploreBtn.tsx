@@ -1,8 +1,14 @@
 'use client'
 
+import posthog from 'posthog-js'
+
 const ExploreBtn = () => {
+    const handleClick = () => {
+        posthog.capture('explore_events_clicked')
+    }
+
     return (
-        <button type="button" id="explore-btn" className="mt-7 mx-auto" onClick={() => {}}>
+        <button type="button" id="explore-btn" className="mt-7 mx-auto" onClick={handleClick}>
         <a href="#events">
             Explore Events
             <img src="/icons/arrow-down.svg" alt="Arrow-Down" width={30} height={24}/>
